@@ -12,7 +12,7 @@ afterEach(async() => {
 })
 
 test('Header has correct text', async () => {
-    const text = await page.$eval('a.brand-logo', el => el.innerHTML);
+    const text = await page.getGontentsOf('a.brand-logo');
 
     expect(text).toEqual('Blogster');
 })
@@ -27,7 +27,7 @@ test('clicking loging starts auth flow', async () => {
 test('When signed in, shows log out button', async () => {
     await page.login();
     
-    const text = await page.$eval('a[href="/auth/logout"]', el => el.innerHTML);
+    const text = await page.getGontentsOf('a[href="/auth/logout"]');
 
     expect(text).toEqual('Logout');
 })
