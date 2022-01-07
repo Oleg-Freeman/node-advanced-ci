@@ -12,9 +12,8 @@ require('./services/cache');
 
 mongoose.Promise = global.Promise;
 mongoose.connect(keys.mongoURI, keys.mongoOptions)
-.then((obj) => {
+.then(() => {
   console.log('MongoDB connected')
-  // console.log(obj);
 });
 
 const app = express();
